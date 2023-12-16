@@ -1,8 +1,8 @@
 # ZenFlow-VR-Mod-Manager
 
-[! License] (https://img.shields.io/badge/License-MIT-blue.svg) (https://opensource.org/licenses/MIT)
-[! GitHub Release] (https://img.shields.io/github/release/your-username/your-mod-manager.svg) (https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/releases)
-[! GitHub Issues] (https://img.shields.io/github/issues/your-username/your-mod-manager.svg) (https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/issues)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Release](https://img.shields.io/github/release/your-username/your-mod-manager.svg)](https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/your-username/your-mod-manager.svg)](https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/issues)
 
 ## Description
 
@@ -15,7 +15,7 @@
 
 ## Installation
 
-1. Download the latest release from the  Releases (https://github.com/your-username/your-mod-manager/releases) page.
+1. Download the latest release from the  Releases (https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/releases) page.
 2. Extract the downloaded ZIP file to your  ZenFlow VR  installation directory.
 3. Run  ZenFlow-VR-Mod-Manager 
 4. Locate your game folder in "Select Game Folder"
