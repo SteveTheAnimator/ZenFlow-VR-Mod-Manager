@@ -1,8 +1,8 @@
 # ZenFlow-VR-Mod-Manager
 
- ! License (https://img.shields.io/badge/License-MIT-blue.svg) (https://opensource.org/licenses/MIT)
- ! GitHub Release (https://img.shields.io/github/release/your-username/your-mod-manager.svg) (https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/releases)
- ! GitHub Issues (https://img.shields.io/github/issues/your-username/your-mod-manager.svg) (https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/issues)
+[!]License (https://img.shields.io/badge/License-MIT-blue.svg) (https://opensource.org/licenses/MIT)
+[!] GitHub Release (https://img.shields.io/github/release/your-username/your-mod-manager.svg) (https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/releases)
+[!] GitHub Issues (https://img.shields.io/github/issues/your-username/your-mod-manager.svg) (https://github.com/SteveTheAnimator/ZenFlow-VR-Mod-Manager/issues)
 
 ## Description
 
