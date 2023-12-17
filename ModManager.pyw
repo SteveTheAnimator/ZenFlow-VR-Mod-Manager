@@ -1,15 +1,24 @@
 import os
 import requests
 import zipfile
-from tkinter import Tk, Label, Button, filedialog, messagebox, IntVar, PhotoImage
+from tkinter import Tk, ttk, filedialog, messagebox, IntVar
 from io import BytesIO
 import shutil
 from urllib.request import urlopen
+from ttkthemes import ThemedStyle
 
 class ModManager:
     def __init__(self, root):
-        self.root = root
+        # Apply the themed style
+        style = ThemedStyle(root)
+        style.set_theme("equilux")  # Choose a ttk theme
+        style.configure('TButton', padding=6, relief='flat', background='gray', borderwidth=0, focuscolor='gray')
+        style.configure('TCheckbutton', padding=6, relief='flat', background='gray', borderwidth=0)
+
         root.title("ZenFlow VR Mod Manager")
+
+        # Set the default background color to gray
+        root.configure(bg='gray')
 
         # Adjust the window size
         window_width = 800
@@ -22,29 +31,28 @@ class ModManager:
 
         root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
-        self.label = Label(root, text="ZenFlow VR Mod Manager", font=("Helvetica", 20), bg="lightblue")
+        self.label = ttk.Label(root, text="ZenFlow VR Mod Manager", font=("Helvetica", 20), background='gray')
         self.label.pack(pady=20)
 
-        # Button to select the game folder
-        self.select_folder_button = Button(root, text="Select Game Folder", command=self.select_game_folder, bg="lightgreen")
+        self.select_folder_button = ttk.Button(root, text="Select Game Folder", command=self.select_game_folder, style='TButton')
         self.select_folder_button.pack(pady=10)
 
         # Toggle for BepInEx installation
         self.bepinex_toggle = IntVar()
         self.bepinex_toggle.set(0)  # Set the default state to off (uninstalled)
 
-        self.bepinex_toggle_button = Button(root, text="Toggle BepInEx Installation", command=self.toggle_bepinex_installation, bg="orange")
+        self.bepinex_toggle_button = ttk.Checkbutton(root, text="Toggle BepInEx Installation", variable=self.bepinex_toggle, style='TCheckbutton')
         self.bepinex_toggle_button.pack(pady=10)
 
         # Toggle for Unity Explorer installation
         self.unity_explorer_toggle = IntVar()
         self.unity_explorer_toggle.set(0)  # Set the default state to off (uninstalled)
 
-        self.unity_explorer_toggle_button = Button(root, text="Toggle Unity Explorer", command=self.toggle_unity_explorer, bg="lightcoral")
+        self.unity_explorer_toggle_button = ttk.Checkbutton(root, text="Toggle Unity Explorer", variable=self.unity_explorer_toggle, style='TCheckbutton')
         self.unity_explorer_toggle_button.pack(pady=10)
 
         # Button to install selected mods
-        self.install_selected_button = Button(root, text="Install Selected", command=self.install_selected, bg="lightgoldenrodyellow")
+        self.install_selected_button = ttk.Button(root, text="Install Selected", command=self.install_selected, style='TButton')
         self.install_selected_button.pack(pady=20)
 
         # Initialize game folder
@@ -53,14 +61,6 @@ class ModManager:
     def select_game_folder(self):
         self.game_folder = filedialog.askdirectory()
         messagebox.showinfo("Game Folder Selected", f"Game folder set to: {self.game_folder}")
-
-    def toggle_bepinex_installation(self):
-        current_state = self.bepinex_toggle.get()
-        self.bepinex_toggle.set(1 - current_state)  # Toggle the state
-
-    def toggle_unity_explorer(self):
-        current_state = self.unity_explorer_toggle.get()
-        self.unity_explorer_toggle.set(1 - current_state)  # Toggle the state
 
     def install_selected(self):
         if not self.game_folder:
@@ -101,7 +101,7 @@ class ModManager:
             unity_explorer_zip = os.path.join(self.game_folder, "UnityExplorer_4.8.2.zip")
 
             response = requests.get(unity_explorer_url)
-            
+
             # Check if the request was successful (status code 200)
             if response.status_code == 200:
                 with open(unity_explorer_zip, 'wb') as f:
