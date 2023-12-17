@@ -12,13 +12,12 @@ class ModManager:
         # Apply the themed style
         style = ThemedStyle(root)
         style.set_theme("equilux")  # Choose a ttk theme
-        style.configure('TButton', padding=6, relief='flat', background='gray', borderwidth=0, focuscolor='gray')
-        style.configure('TCheckbutton', padding=6, relief='flat', background='gray', borderwidth=0)
-
+        style.configure('TButton', padding=6, relief='flat', background='#131313', borderwidth=0, focuscolor='#131313')
+        style.configure('TCheckbutton', padding=6, relief='flat', background='#131313', borderwidth=0)     
         root.title("ZenFlow VR Mod Manager")
 
         # Set the default background color to gray
-        root.configure(bg='gray')
+        root.configure(bg='#131313')
 
         # Adjust the window size
         window_width = 800
@@ -30,8 +29,8 @@ class ModManager:
         y_position = (screen_height - window_height) // 2
 
         root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
-
-        self.label = ttk.Label(root, text="ZenFlow VR Mod Manager", font=("Helvetica", 20), background='gray')
+        
+        self.label = ttk.Label(root, text="ZenFlow VR Mod Manager", font=("Helvetica", 20), background='#131313')
         self.label.pack(pady=20)
 
         self.select_folder_button = ttk.Button(root, text="Select Game Folder", command=self.select_game_folder, style='TButton')
